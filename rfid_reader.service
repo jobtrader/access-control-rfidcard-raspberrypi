@@ -1,0 +1,14 @@
+[Unit]
+Description=Display Credential Screen
+
+[Service]
+ExecStart=/bin/bash -c 'cd /home/pi/access_control_raspberrypi && /usr/bin/python3 /home/pi/access_control_raspberrypi/main.py > /home/pi/access_control_raspberrypi/main.log 2>&1'
+Restart=always
+RestartSec=10s
+KillMode=process
+TimeoutSec=infinity
+
+[Install]
+WantedBy=graphical.target
+
+
